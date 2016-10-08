@@ -1,0 +1,12 @@
+<h1> <%= @post.title %> </h1>
+<% sub_gage = Sub.find(@post.sub_id) %>
+<%= link_to "<- Back to #{sub_gage.title}", sub_url(sub_gage) %><br><br>
+
+<% if current_user.id == @post.author_id %>
+  <%= button_to "Edit Post", edit_sub_post_url(sub_gage.id, @post), method: :get %>
+  <%= button_to "Delete Post", sub_post_url(sub_gage.id, @post), method: :delete %>
+<% end %>
+
+<p>
+  <%= @post.content %>
+</p>

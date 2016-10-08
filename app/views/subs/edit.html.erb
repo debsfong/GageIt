@@ -1,0 +1,13 @@
+<h1>Edit Sub-Gage</h1>
+
+<form action="<%= sub_url %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %> ">
+
+  <input type="hidden" name="sub[moderator_id]" value=" <%= current_user.id %> ">
+  <input type="text" name="sub[title]" value=" <%= @sub.title %>"><br>
+  <textarea name="sub[description]" rows="8" cols="40" > <%= @sub.description %></textarea><br><br>
+
+  <input type="submit" value="Edit Your Sub-Gage">
+</form>

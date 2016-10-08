@@ -1,0 +1,13 @@
+<% sub_gage = Sub.find(params[:sub_id]) %>
+<h1>Edit a <%= sub_gage.title %> Post</h1>
+<form action="<%= sub_post_url(sub_gage.id, @post) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %> ">
+  <input type="hidden" name="post[sub_id]" value=" <%= sub_gage.id %> ">
+  <input type="hidden" name="post[author_id]" value=" <%= current_user.id %> ">
+
+  <input type="text" name="post[title]" value=" <%= @post.title %> "><br>
+  <textarea name="post[content]" rows="8" cols="40" > <%= @post.content %> </textarea><br><br>
+
+  <input type="submit" value="Edit Your<%= sub_gage.title %> Post">
+</form>

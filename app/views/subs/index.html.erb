@@ -1,0 +1,7 @@
+<h1>Gage-it</h1>
+  <%= button_to "Add Sub-Gage", new_sub_url, method: :get %><br><br>
+
+  <% @subs.each do |sub_gage_it| %>
+    <%= link_to "#{sub_gage_it.title}", sub_url(sub_gage_it) %><br>
+    <br>
+  <% end %>

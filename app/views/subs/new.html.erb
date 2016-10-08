@@ -1,0 +1,10 @@
+<h1>Create a Sub-Gage</h1>
+<form action="<%= subs_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %> ">
+
+  <input type="hidden" name="sub[moderator_id]" value=" <%= current_user.id %> ">
+  <input type="text" name="sub[title]" placeholder="title"><br>
+  <textarea name="sub[description]" rows="8" cols="40" placeholder="description"></textarea><br><br>
+
+  <input type="submit" value="Create Your Sub-Gage">
+</form>
